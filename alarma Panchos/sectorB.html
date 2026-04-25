@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/style.css">
+<title>Sector B</title>
+</head>
+<body>
+<div class="container">
+    <h1>🏭 CENTENARIO - SECTOR B</h1>
+
+    <p id="mensaje">Esperando aviso...</p>
+
+    <button class="btn-ok" onclick="recibir()">
+        ✔️ Recibido
+    </button>
+</div>
+
+<script>
+function sonidoYVoz(){
+    document.getElementById("mensaje").innerText =
+    "🚨 En 30 min sale un carro de panchos";
+
+    // sonido
+    let audio = new Audio("https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg");
+    audio.play();
+
+    // voz
+    let voz = new SpeechSynthesisUtterance(
+        "En 30 minutos sale un carro de panchos"
+    );
+    voz.lang = "es-UY";
+    speechSynthesis.speak(voz);
+}
+
+// escuchar alerta
+window.addEventListener("storage", function(e){
+    if(e.key === "alertaPanchos"){
+        sonidoYVoz();
+    }
+});
+
+// recibido
+function recibir(){
+    document.getElementById("mensaje").innerText =
+    "✔️ Recibido correctamente";
+}
+</script>
+
+</body>
+</html>

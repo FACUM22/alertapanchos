@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema Centenario</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🏭 Sistema Centenario</h1>
+
+    <div id="menu">
+        <button onclick="mostrarA()">📤 Sector A</button>
+        <button onclick="mostrarB()">📥 Sector B</button>
+    </div>
+
+    <div id="sectorA" class="panel" style="display:none;">
+        <h2>Sector A</h2>
+        <button onclick="enviarAlerta()">🚨 Enviar alerta</button>
+        <p id="estado"></p>
+        <button onclick="volver()">⬅ Volver</button>
+    </div>
+
+    <div id="sectorB" class="panel" style="display:none;">
+        <h2>Sector B</h2>
+        <p id="mensaje">Esperando aviso...</p>
+        <button onclick="recibir()">✔️ Recibido</button>
+        <button onclick="volver()">⬅ Volver</button>
+    </div>
+
+</div>
+
+<script src="recibir.js"></script>
+</body>
+</html>
